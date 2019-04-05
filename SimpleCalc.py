@@ -7,9 +7,9 @@
 
 # Asks user for two values and the mathematical operation they want to use
 def valueQuery():
-    value1 = float(raw_input("What is the first value you want to do math with?: "))
-    operation = str(raw_input("What is the operation you'd like to perform? (+, -, *, /): "))
-    value2 = float(raw_input("What is the second value you want to do math with?: "))
+    value1 = float(input("What is the first value you want to do math with?: "))
+    operation = str(input("What is the operation you'd like to perform? (+, -, *, /): "))
+    value2 = float(input("What is the second value you want to do math with?: "))
     return value1, operation, value2;
 
 # Performs the desired operation and prints the answer
@@ -25,25 +25,25 @@ def calculate():
         answer = value1 / value2
     else:
         answer = "ERROR - check to make sure your inputs were valid."
-    print "The answer is: ", answer
+    print("The answer is: %s" % answer)
     return;
 
 # Asks user if they would like to calculate something else
 def reset():
-    resetOption = str(raw_input("Would you like to calculate something else? (Y/N): "))
+    resetOption = input("Would you like to calculate something else? (Y/N): ")
     if resetOption == "Y":
         start = True
     elif resetOption == "N":
         start = False
-        print "Thanks for using SimpleCalc!"
+        print("Thanks for using SimpleCalc!")
     else:
         start = False
-        print "Invalid response... quitting SimpleCalc."
+        print("Invalid response... quitting SimpleCalc.")
     return start;
 
 # Runs the calculator until the user quits
 start = True
-print "Welcome to SimpleCalc!"
+print("Welcome to SimpleCalc!")
 while start == True:
     calculate()
     start = reset()
