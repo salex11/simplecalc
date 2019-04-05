@@ -31,9 +31,9 @@ def calculate():
 # Asks user if they would like to calculate something else
 def reset():
     resetOption = input("Would you like to calculate something else? (Y/N): ")
-    if resetOption == "Y":
+    if resetOption == "Y" or resetOption == "y":
         start = True
-    elif resetOption == "N":
+    elif resetOption == "N" or resetOption == "n":
         start = False
         print("Thanks for using SimpleCalc!")
     else:
@@ -53,4 +53,3 @@ while start == True:
 # 2. Removal of decimal place (1.0) w/ whole numbers
 # 3. Pressing a key to prompt reset()
 # (i.e. "Press ENTER to calculate again or 'Q' to quit.")
-# 4. Allow for lowercase "y" and "n" within reset()
